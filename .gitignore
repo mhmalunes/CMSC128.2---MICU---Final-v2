@@ -1,0 +1,10 @@
+# dependencies
+node_modules/
+backend/backend/node_modules/
+frontend/frontend/node_modules/
+
+# env
+.env
+
+# mac junk
+__MACOSX/

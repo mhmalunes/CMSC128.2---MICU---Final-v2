@@ -496,8 +496,14 @@ app.delete('/api/patients/:patientId/records/:recordId', authenticate, (req, res
   res.json({ success: true });
 });
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`MICU API listening on http://localhost:${PORT}`);
+const PORT = process.env.PORT;
+
+if (!PORT) {
+  throw new Error("PORT is not defined");
+}
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`MICU API listening on port ${PORT}`);
 });
+
 
